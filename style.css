@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    color: #9d9dc0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #272640;
+}
+
+/* #data-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+h1{
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+
+.card{
+    margin: 2rem 40vw;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+.card h1, .card p{
+    display: inline-block;
+}
+
+.female{
+    background-color: #312244;
+    border: solid #654C6C;
+}
+
+.male{
+    background-color: #1B3A4B;
+    border: solid #006466;
+}
