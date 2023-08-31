@@ -20,6 +20,7 @@ try {
 
 //hosting index.html
 app.get('/', (req, res) => {
+  console.log('serving index.html...')
   res.sendFile('index.html');
 });
 
