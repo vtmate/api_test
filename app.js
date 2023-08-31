@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.port || 5000;
 const dataFilePath = 'datas.json';
+const path = require('path');
 
 app.use(cors());
 app.use(express.static('public'));
@@ -20,9 +21,13 @@ try {
 
 //hosting index.html
 app.get('/', (req, res) => {
-  console.log('serving index.html...')
-  res.sendFile('index.html');
+  const indexPath = path.join(__dirname, 'index.html');
+  res.sendFile(indexPath);
 });
+// app.get('/', (req, res) => {
+//   console.log('serving index.html...')
+//   res.sendFile('index.html');
+// });
 
 //getting items
 app.get('/items', (req, res) => {
