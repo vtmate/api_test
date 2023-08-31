@@ -1,26 +1,29 @@
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
-
 const app = express();
 const port = process.env.port || 5000;
-app.use(cors());
-// const port = process.env.PORT || 3000;
-
 const dataFilePath = 'datas.json';
+
+app.use(cors());
+app.use(express.static('public'));
 
 let items = [];
 
-// Load data from the JSON file at startup, if it exists
+//loading the data from the JSON file
 try {
   const data = fs.readFileSync(dataFilePath, 'utf8');
   items = JSON.parse(data);
 } catch (err) {
-  // If the file doesn't exist or is empty, start with an empty array
   items = [];
 }
 
-// List all items
+//hosting index.html
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
+});
+
+//getting items
 app.get('/items', (req, res) => {
   res.json(items);
   console.log(items);
