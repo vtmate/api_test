@@ -1,6 +1,6 @@
 const holder = document.getElementById("data-holder");
 
-fetch('http://localhost:5000/items')
+fetch('https://api-test-4hm8.onrender.com/items')
     .then(response => {
         if (!response.ok) {
             throw new Error('Error getting the JSON');
